@@ -1,16 +1,11 @@
+import BasicSection from 'components/BasicSection';
+import { EnvVars } from 'env';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
-import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
-import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
-import Cta from 'views/HomePage/Cta';
-import Features from 'views/HomePage/Features';
-import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
-import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -27,16 +22,15 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <WhiteBackgroundContainer>
           <Hero />
           <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
-            </p>
+          <BasicSection imageUrl="/session-replay.webp" title="Pinpoint the issues affecting your users" overTitle="Session Replay">
+            <p>Session replay saves you time by showing exactly how your users are using your product.</p>
           </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
+          <BasicSection
+            imageUrl="/network-inspector.webp"
+            title="No more guesswork. See which requests are failing"
+            overTitle="Network Inspector"
+            reversed
+          >
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
               <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
@@ -47,13 +41,16 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
               <li>Professional feature 3</li>
             </ul>
           </BasicSection>
+          <BasicSection imageUrl="/error-monitoring.webp" title="Understand the root cause behind crashes" overTitle="Error Monitoring">
+            <p>Session replay saves you time by showing exactly how your users are using your product.</p>
+          </BasicSection>
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
-          <Cta />
-          <FeaturesGallery />
-          <Features />
+          {/* <Cta /> */}
+          {/* <FeaturesGallery />
+          <Features /> */}
           <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
+          {/* <ScrollableBlogPosts posts={posts} /> */}
         </DarkerBackgroundContainer>
       </HomepageWrapper>
     </>

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
 import AutofitGrid from 'components/AutofitGrid';
 import PricingCard from 'components/PricingCard';
 import SectionTitle from 'components/SectionTitle';
+import React from 'react';
+import styled from 'styled-components';
 
 export default function PricingTablesSection() {
   return (
@@ -12,32 +12,24 @@ export default function PricingTablesSection() {
         <PricingCard
           title="free"
           description="Give us a try for free"
-          benefits={['1 seat', '1 active project', 'Ulimited viewers', '10 blocks']}
+          benefits={['1 seat', '1,000 sessions per month', '15 day data retention']}
         >
           $0<span>/month</span>
         </PricingCard>
         <PricingCard
-          title="Starter"
-          description="Best for individual desginers"
-          benefits={['1 seat', '3 active project', 'Ulimited viewers', '100 blocks', 'CSV Downloader', 'Password protection']}
+          title="Startup"
+          description="Best for small teams"
+          benefits={['Unlimited seats', '10,000 sessions per month', '30 day data retention']}
           isOutlined
         >
           $29<span>/month</span>
         </PricingCard>
         <PricingCard
-          title="Premium"
+          title="Professional"
           description="Get your team together"
-          benefits={[
-            '10 seat',
-            '10 active project',
-            'Ulimited viewers',
-            'Unlimited blocks',
-            'CSV Downloader',
-            'Password protection',
-            'Customization',
-          ]}
+          benefits={['Unlimited seats', '25,000 sessions per month', '30 day data retention']}
         >
-          $79<span>/month</span>
+          $99<span>/month</span>
         </PricingCard>
       </AutofitGrid>
     </Wrapper>

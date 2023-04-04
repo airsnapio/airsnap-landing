@@ -1,11 +1,16 @@
+import Container from 'components/Container';
 import NextImage from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-
-import { A11y, Autoplay, Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Container from 'components/Container';
-import Separator from 'components/Separator';
+import {
+  A11y,
+  Autoplay,
+  Navigation,
+} from 'swiper';
+import {
+  Swiper,
+  SwiperSlide,
+} from 'swiper/react';
 import { media } from 'utils/media';
 
 const TESTIMONIALS = [
@@ -38,10 +43,19 @@ const TESTIMONIALS = [
   },
 ];
 
+const TopPadding = styled.div`
+  margin: 12.5rem 0 0;
+
+  ${media('<=tablet')} {
+    margin: 7.5rem 0 0;
+  }
+`;
+
 export default function Testimonials() {
   return (
     <div>
-      <Separator />
+      {/* <Separator /> */}
+      <TopPadding />
       <TestimonialsWrapper>
         <Swiper modules={[Navigation, Autoplay, A11y]} slidesPerView={1} autoplay={{ delay: 8000 }} centeredSlides navigation loop>
           {TESTIMONIALS.map((singleTestimonial, idx) => (
@@ -68,7 +82,7 @@ export default function Testimonials() {
           ))}
         </Swiper>
       </TestimonialsWrapper>
-      <Separator />
+      {/* <Separator /> */}
     </div>
   );
 }

@@ -1,7 +1,11 @@
-import NextLink from 'next/link';
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'react-share';
-import styled from 'styled-components';
 import Container from 'components/Container';
+import NextLink from 'next/link';
+import {
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from 'react-share';
+import styled from 'styled-components';
 import { media } from 'utils/media';
 
 type SingleFooterListItem = { title: string; href: string };
@@ -35,15 +39,15 @@ const footerItems: FooterItems = [
       { title: 'Help Center', href: '/help-center' },
     ],
   },
-  {
-    title: 'Something',
-    items: [
-      { title: 'Features2', href: '/features2' },
-      { title: 'Something2', href: '/something2' },
-      { title: 'Something else2', href: '/something-else2' },
-      { title: 'And something else2', href: '/and-something-else2' },
-    ],
-  },
+  // {
+  //   title: 'Something',
+  //   items: [
+  //     { title: 'Features2', href: '/features2' },
+  //     { title: 'Something2', href: '/something2' },
+  //     { title: 'Something else2', href: '/something-else2' },
+  //     { title: 'And something else2', href: '/and-something-else2' },
+  //   ],
+  // },
 ];
 
 export default function Footer() {
@@ -75,7 +79,7 @@ export default function Footer() {
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright 2023 AirSnap Inc.</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>

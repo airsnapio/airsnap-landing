@@ -1,11 +1,20 @@
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import {
+  ScrollPositionEffectProps,
+  useScrollPosition,
+} from 'hooks/useScrollPosition';
 import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useRef, useState } from 'react';
+import React, {
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
-import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
-import { NavItems, SingleNavItem } from 'types';
+import {
+  NavItems,
+  SingleNavItem,
+} from 'types';
 import { media } from 'utils/media';
 import Button from './Button';
 import Container from './Container';
@@ -77,9 +86,9 @@ export default function Navbar({ items }: NavbarProps) {
             <NavItem key={singleItem.href} {...singleItem} />
           ))}
         </NavItemList>
-        <ColorSwitcherContainer>
+        {/* <ColorSwitcherContainer>
           <ColorSwitcher />
-        </ColorSwitcherContainer>
+        </ColorSwitcherContainer> */}
         <HamburgerMenuWrapper>
           <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
         </HamburgerMenuWrapper>
@@ -88,7 +97,7 @@ export default function Navbar({ items }: NavbarProps) {
   );
 }
 
-function NavItem({ href, title, outlined }: SingleNavItem) {
+function NavItem({ href, title, outlined, newTab }: SingleNavItem) {
   const { setIsModalOpened } = useNewsletterModalContext();
 
   function showNewsletterModal() {
@@ -102,7 +111,7 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   return (
     <NavItemWrapper outlined={outlined}>
       <NextLink href={href} passHref>
-        <a>{title}</a>
+        <a {...(newTab ? { target: '_blank' } : {})}>{title}</a>
       </NextLink>
     </NavItemWrapper>
   );
@@ -134,6 +143,7 @@ const LogoWrapper = styled.a`
   text-decoration: none;
 
   color: rgb(var(--logoColor));
+  width: 168px;
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
