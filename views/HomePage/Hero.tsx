@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        {/* <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle> */}
+        <CustomOverTitle>Session Replay for Mobile Apps</CustomOverTitle>
         <Heading>Make debugging easier with Session Replay</Heading>
         {/* <Heading>Debug mobile apps with Session Replay</Heading> */}
         <Description>

@@ -19,7 +19,7 @@ export default function PricingTablesSection() {
         <PricingCard
           title="Startup"
           description="Best for small teams"
-          benefits={['Unlimited seats', '10,000 sessions per month', '30 day data retention']}
+          benefits={['3 seats', '10,000 sessions per month', '30 day data retention']}
           isOutlined
         >
           $29<span>/month</span>
